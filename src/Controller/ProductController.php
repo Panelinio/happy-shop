@@ -17,9 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProductController extends AbstractController
 {
-    /**
-     * @Route("/product/{id}", name="product.detail")
-     */
+    #[Route('/product/{id}', name: 'product.detail')]
     public function detail(Product $product, Request $request, CartManager $cartManager)
     {
         $form = $this->createForm(AddToCartType::class);
